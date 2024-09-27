@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Math Allstars!</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <header>
+      <h1 class="slide-inX"></h1>
+      <button class="btn restart">Start over</button>
+      <button class="btn next">Next problem</button>
+      <button class="btn level">Next level</button>
+
+      <div class="boxes">
+        <div class="number number1">?</div>
+        <div class="number operator1">?</div>
+        <div class="number number2">?</div>
+        <div class="number equal">=</div>
+        <div class="number answer">?</div>
+      </div>
+    </header>
+    <main>
+      <section class="left">
+        <label for="calc" class="sr-only">Your Answer</label>
+        <input type="number" id="calc" class="calc" aria-label="Your Answer" />
+        <button class="btn check">Check answer</button>
+      </section>
+
+      <section class="middle">
+        <div class="animation-container" id="correct-animation"></div>
+        <div class="animation-container" id="incorrect-animation">></div>
+        <div class="animation-container" id="lost-game"></div>
+      </section>
+
+      <section class="right">
+        <p class="message">Calculate the answer...</p>
+        <div class="scores">
+          <p class="label-score">💯 Score: <span class="score">0</span></p>
+          <p class="label-highscore">
+            🥇 Highscore: <span class="highscore">0</span>
+          </p>
+        </div>
+        <p class="feedback"></p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P|Comic+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  color: #fff;
+  background-color: #f39c12;
+  animation: backgroundAnimation 10s infinite alternate;
+  overflow-x: hidden; /* Added to prevent horizontal scrolling */
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#floatingImage {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes backgroundAnimation {
+  from {
+    background-color: #f39c12;
+  }
+  to {
+    background-color: #f1c40f;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  border-bottom: 1rem solid #fff;
+  position: relative;
+  background-color: red;
+  background-image: url(images/MaxTheMathMonkey.png);
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: 5% 25%;
+}
+
+h1 {
+  position: absolute;
+  font-size: 10rem;
+  text-align: center;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  color: #2ecc71;
+}
+
+main {
+  height: 60vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f1c40f;
+}
+
+.left,
+.right {
+  max-width: 52rem; /* Set max-width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  text-align: center;
+  height: 5rem;
+  width: 90%; /* Set width to 90% */
+  max-width: 18rem; /* Set max-width */
+  font-size: 4rem;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #ffeaa7;
+  color: #333;
+}
+
+.right {
+  font-size: 2rem;
+}
+
+.boxes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 90%; /* Set width to 90% */
+  margin-top: 2rem;
+}
+
+.number {
+  background: #fff;
+  color: #333;
+  font-size: 5rem;
+  width: 15rem;
+  padding: 3rem 0rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border: none;
+  background-color: #74b9ff;
+  color: #333;
+  font-size: 2rem;
+  font-family: "Comic Neue", cursive;
+  padding: 2rem 3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 1rem; /* Adjusted margins */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0984e3;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  margin-bottom: 2rem;
+  height: 3rem;
+  font-size: 3rem;
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
+
+.scores {
+  position: absolute;
+  top: 75%;
+  font-size: 3rem;
+}
+
+.sr-only {
+  font-size: 2rem;
+}
+
+.animation-container {
+  display: none;
+}
+
+.show-animation {
+  display: block;
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInX {
+  from {
+    transform: translateX(-500%);
+  }
+  to {
+    transform: translateX(10);
+  }
+}
+
+.slide-inX {
+  animation: slideInX 3s ease-out;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  font-size: 4rem;
+  margin-top: 15%;
+  animation: bounce 2s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header,
+  main {
+    flex-direction: column; /* Changed to column */
+    align-items: center; /* Center items */
+  }
+
+  .left,
+  .right {
+    width: 100%; /* Full width */
+  }
+
+  .number {
+    width: 10rem; /* Adjust width */
+    font-size: 3rem; /* Adjust font size */
+    padding: 2rem 0; /* Adjust padding */
+  }
+
+  button {
+    font-size: 1.6rem; /* Adjust font size */
+    padding: 1.5rem 2rem; /* Adjust padding */
+  }
+
+  h1 {
+    font-size: 3rem; /* Adjust font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .number {
+    width: 8rem; /* Adjust width */
+    font-size: 2rem; /* Adjust font size */
+    padding: 1.5rem 0; /* Adjust padding */
+  }
+
+  button {
+    font-size: 1.4rem; /* Adjust font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Adjust font size */
+  }
+}
+
+/* Media Queries for large screens */
+@media (min-width: 769px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .btn.restart {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .btn.next {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .btn.level {
+    position: absolute;
+    top: 10rem;
+    right: 1rem;
+  }
+
+  .boxes {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 55%;
+    left: 5%;
+  }
+}
